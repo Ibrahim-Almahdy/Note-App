@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تطبيق الملاحظات</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <div class="sidebar">
+        <ul id="notes-list"></ul>
+      </div>
+
+      <div class="main-area">
+        <div id="empty-msg" class="empty-state">
+          <h3>لا يوجد ملاحظة معروضة</h3>
+          <p>اضغط على علامة + لإضافة جديد</p>
+        </div>
+
+        <div id="editor-section" class="editor-container" style="display: none">
+          <div class="header-title">
+            <h2 id="form-title">ملاحظة جديدة</h2>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="note-title" placeholder="العنوان" />
+          </div>
+
+          <div class="form-group">
+            <textarea
+              id="note-text"
+              placeholder="اكتب التفاصيل هنا..."
+            ></textarea>
+          </div>
+
+          <div class="button-group">
+            <button id="save-btn">حفظ التعديلات</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="new-note-btn" class="fab-btn">+</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
