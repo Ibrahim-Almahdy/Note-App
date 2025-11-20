@@ -22,19 +22,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .app-wrapper {
-  width: 900px;
-  height: 500px;
+  width: 95%;
+  max-width: 1000px;
+  height: 85vh;
+  min-height: 500px;
   background-color: var(--content-bg);
   display: flex;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .sidebar {
-  width: 30%;
+  width: 35%;
   background-color: var(--sidebar-bg);
   color: var(--text-light);
   overflow-y: auto;
@@ -69,17 +74,21 @@ body {
   flex-grow: 1;
   text-align: right;
   padding-left: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .left-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .custom-checkbox {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   accent-color: var(--green-btn);
 }
@@ -100,9 +109,11 @@ body {
 }
 
 .main-area {
-  width: 70%;
-  padding: 40px;
+  width: 65%;
+  padding: 30px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .empty-state {
@@ -112,6 +123,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #aaa;
+  text-align: center;
 }
 
 .editor-container {
@@ -122,15 +134,15 @@ body {
 
 .header-title {
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .header-title h2 {
   color: var(--text-dark);
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 input,
@@ -141,13 +153,14 @@ textarea {
   outline: none;
   font-size: 16px;
   background-color: #fff;
+  border-radius: 5px;
 }
 
 input {
   height: 45px;
 }
 textarea {
-  height: 200px;
+  flex-grow: 1;
   resize: none;
 }
 input:focus,
@@ -156,7 +169,7 @@ textarea:focus {
 }
 
 .button-group {
-  margin-top: auto;
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
 }
@@ -165,9 +178,10 @@ textarea:focus {
   background-color: var(--green-btn);
   color: white;
   border: none;
-  padding: 10px 40px;
-  font-size: 18px;
+  padding: 10px 30px;
+  font-size: 16px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 #save-btn:hover {
@@ -176,7 +190,7 @@ textarea:focus {
 
 .fab-btn {
   position: absolute;
-  right: 27.5%;
+  right: 32.5%;
   top: 50%;
   transform: translateY(-50%);
   width: 50px;
@@ -192,7 +206,51 @@ textarea:focus {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  transition: transform 0.3s;
 }
+
 .fab-btn:hover {
   background-color: #c82333;
+  transform: translateY(-50%) scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .app-wrapper {
+    flex-direction: column;
+    height: 95vh;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 35%;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .main-area {
+    width: 100%;
+    height: 65%;
+    padding: 20px;
+  }
+
+  .fab-btn {
+    right: 20px;
+    bottom: 20px;
+    top: auto;
+    transform: none;
+    width: 55px;
+    height: 55px;
+  }
+
+  .fab-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .header-title h2 {
+    font-size: 18px;
+  }
+  #save-btn {
+    width: 100%;
+  }
 }
