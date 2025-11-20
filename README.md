@@ -29,4 +29,4 @@ This project is a fully functional Single Page Application (SPA) built using Van
 
 ---
 
-Developed by Ibrahim Elmahdy
+Developed by Ibrahim Almahdy
